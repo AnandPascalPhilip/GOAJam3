@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float jumpForce = 5f;
     public bool grounded = false;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,6 @@ public class PlayerControl : MonoBehaviour
 
     void Jump()
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
     }
 }
