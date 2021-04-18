@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GroundSensor
+    - OutOfBoundsRespawn
     - PlayerControl
     - WallReset
     Unity.2D.Animation.Editor.dll:
@@ -58,6 +59,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12424}
     - Class: 114
       Script: {instanceID: 12776}
+    - Class: 114
+      Script: {instanceID: 13060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -383,6 +386,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 547bff9c42219e33bae595f2f6580462
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OutOfBoundsRespawn
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -582,4 +591,5 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/21triphi/Downloads
+  playerPath: /Users/isabellehan/Documents/GOA Unity Projects/GOAJam3/PH_04-18-21
+    12.3 MakeBuild_attempt
