@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
-    GameObject Player;
+    PlayerControl controller;
     public int grounds=0;
     public bool playerGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = gameObject.transform.parent.gameObject;
+        controller = GetComponentInParent<PlayerControl>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Terrain")
         {
             grounds++;
-            Player.GetComponent<PlayerControl>().grounded = true;
+            controller.grounded = true;
         }
     }
         private void OnCollisionExit2D(Collision2D collision)
@@ -26,7 +26,7 @@ public class GroundSensor : MonoBehaviour
         if (collision.collider.tag == "Terrain"){
         grounds--;
             if(grounds==0){   
-                Player.GetComponent<PlayerControl>().grounded = false;
+                controller.grounded = false;
             }
         }
     }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerReset : MonoBehaviour
 {
     public bool isLocalRewinding = false;
+    public Vector3 pos;
     List<Vector3> positions;
     void Start()
     {
         positions=new List<Vector3>();
+        pos = transform.position;
     }
 
     // Update is called once per frame
@@ -27,12 +29,18 @@ public class PlayerReset : MonoBehaviour
 
     void Rewind(){
         Debug.Log("Movingback");
+        if(positions.Count!=0){
         transform.position = positions[0];
         positions.RemoveAt(0);
+        }
     }
     void Record(){
+
         positions.Insert(0,transform.position);
         Debug.Log("Logging");
+        if (positions[0] == positions[1]){
+            positions.RemoveAt(0);
+        }
     }
         public void StartRewind ()
     {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6397736677397481459}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea49597b678f417ab7aafd503e6df26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
+  isGlobalRewinding: 0
 --- !u!50 &6397736677397481471
 Rigidbody2D:
   serializedVersion: 4
