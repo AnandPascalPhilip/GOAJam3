@@ -4,11 +4,13 @@ ScriptsOnlyBuild:
     - GroundSensor
     - OutOfBoundsRespawn
     - PlayerControl
+    - PlayerReset
     - WallReset
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -29,6 +31,12 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -54,14 +62,28 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 590}
     - Class: 114
-      Script: {instanceID: 11730}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 12424}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 12776}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 13060}
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12454}
+    - Class: 114
+      Script: {instanceID: 12806}
+    - Class: 114
+      Script: {instanceID: 13090}
+    - Class: 114
+      Script: {instanceID: 13480}
+    - Class: 114
+      Script: {instanceID: 13780}
+    - Class: 114
+      Script: {instanceID: 14392}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -70,6 +92,14 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -326,7 +356,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 9e469082a20b17eae5822fc13f6ee711
+      Hash: d87ffd7d625ee1fabe951f427f81a292
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GroundSensor
@@ -350,7 +380,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 36dc39dc057af12cec900668c6a0f4ca
+      Hash: 073ab88f8033c462724694f0d01431d6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WallReset
@@ -456,6 +486,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 478c107e831ca790fb05450abc0632cd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerReset
   - hash:
       serializedVersion: 2
       Hash: 6939772cb3ce775a8e8d99f332534491
@@ -592,4 +628,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Game.unity
   playerPath: /Users/isabellehan/Documents/GOA Unity Projects/GOAJam3/PH_04-18-21
-    12.3 MakeBuild_attempt
+    13.2 MakeBuild
