@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class OutOfBoundsRespawn : MonoBehaviour
 {
-    public Vector2 spawnPos;
+    //public Vector2 spawnPos;
+    public GameObject respawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2.5f);
+        //spawnPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2.5f);
+        respawn = GameObject.FindGameObjectWithTag("Respawn");
     }
 
     // Update is called once per frame
@@ -20,10 +22,15 @@ public class OutOfBoundsRespawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == ("Respawn"))
+        //if(collision.gameObject.tag == ("Respawn"))
+        //{
+        //    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        //    gameObject.transform.position = spawnPos;
+        //}
+        if(collision.gameObject.tag == "Player")
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-            gameObject.transform.position = spawnPos;
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            collision.gameObject.transform.position = respawn.transform.position;
         }
     }
 }

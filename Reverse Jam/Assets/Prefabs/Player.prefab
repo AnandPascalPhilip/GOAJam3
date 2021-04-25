@@ -15,10 +15,9 @@ GameObject:
   - component: {fileID: 3556667019963991026}
   - component: {fileID: 613910089}
   - component: {fileID: 613910090}
-  - component: {fileID: 613910091}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLocalRewinding: 0
+  pos: {x: 0, y: 0, z: 0}
 --- !u!114 &613910090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,19 +177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grounds: 0
   playerGrounded: 0
---- !u!114 &613910091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3556667019963991029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e422ef86fdc94864a7604a01cff1b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPos: {x: 0, y: 0}
 --- !u!1 &3556667020281762888
 GameObject:
   m_ObjectHideFlags: 0
