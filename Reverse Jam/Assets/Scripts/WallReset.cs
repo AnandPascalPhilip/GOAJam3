@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class WallReset : MonoBehaviour {
     public bool isGlobalRewinding = false;
+    private float ld;
+    private float ad;
     Rigidbody2D rb;
-
     List<Vector3> positions;
     List<Quaternion> rotations;
-
     void Start() {
         positions = new List<Vector3>();
         rotations = new List<Quaternion>();
         rb = GetComponent<Rigidbody2D>();
+        ld = rb.drag;
+        ad = rb.angularDrag;
     }
 
     void Update() {
@@ -21,24 +23,26 @@ public class WallReset : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Return))
             StopRewind();
     }
-
     void FixedUpdate ()
     {
-        if (isGlobalRewinding == true)
-            Rewind();
-        else
+        if (isGlobalRewinding == true){
+            Rewind();        
+            rb.drag=1000000;
+            rb.angularDrag=100000;
+        } else{
             Record();
+            rb.drag=ld;
+            rb.angularDrag=ad;
+        }
     }
 
     void Rewind ()
     {
-    //    Debug.Log("Movingback");
         transform.position = positions[0];
         transform.rotation = rotations[0];
         positions.RemoveAt(0);
         rotations.RemoveAt(0);
     }
-
     void Record ()
     {
         positions.Insert(0,transform.position);
@@ -47,23 +51,14 @@ public class WallReset : MonoBehaviour {
             positions.RemoveAt(0);
             rotations.RemoveAt(0);
         }
-    //    Debug.Log("Logging");
     }
 
     public void StartRewind ()
     {
         isGlobalRewinding = true;
-    //    Debug.Log("Rewind");
     }
-
     public void StopRewind ()
-    {
-        
+    { 
         isGlobalRewinding = false;
-        rb.simulated=false;
-        rb.isKinematic=true;
-        rb.simulated=true;
-        rb.isKinematic=false;
-    //    Debug.Log("Rewindstopped");
     }
 }
