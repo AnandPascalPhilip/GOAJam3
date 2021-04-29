@@ -2,3 +2,5 @@ Base path: '/Applications/Unity/Hub/Editor/2019.4.18f1/Unity.app/Contents', plug
 Cmd: initializeCompiler
 Cmd: translateComputeKernel
   api=14 insize=1151 outsize=1287 ok=1
+
+Quitting shader compiler process

@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public bool grounded = false;
+    public bool hasKey = false;
+
     // Start is called before the first frame update
     void Start()
     {
