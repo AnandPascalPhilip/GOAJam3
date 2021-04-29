@@ -15,7 +15,13 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*if(!player.GetComponent<PlayerControl>().hasKey)
+        {
+            if(!gameObject.activeInHierarchy)
+            {
+                gameObject.SetActive(true);
+            }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +31,7 @@ public class Key : MonoBehaviour
         {
             player.GetComponent<PlayerControl>().hasKey = true;
             Debug.Log("key got");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

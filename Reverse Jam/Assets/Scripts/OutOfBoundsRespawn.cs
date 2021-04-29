@@ -22,15 +22,12 @@ public class OutOfBoundsRespawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.gameObject.tag == ("Respawn"))
-        //{
-        //    gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-        //    gameObject.transform.position = spawnPos;
-        //}
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             collision.gameObject.transform.position = respawn.transform.position;
+            collision.gameObject.GetComponent<PlayerControl>().hasKey = false;
+            Debug.Log("(respawn) hasKey = " + collision.gameObject.GetComponent<PlayerControl>().hasKey);
         }
     }
 }
