@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GateWin : MonoBehaviour
 {
@@ -18,11 +19,12 @@ public class GateWin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player"
-            && collision.GetComponent<PlayerControl>().hasKey)
+        Debug.Log("win");
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //win
-            Debug.Log("win");
+            //collision.GetComponent<GameControllerScript>().CompleteLevel();
+            Debug.Log("loading level " + (SceneManager.GetActiveScene().buildIndex + 1));
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
